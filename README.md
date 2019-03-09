@@ -1,6 +1,7 @@
 # cryptomemes
-Buy Memes on the Blockchain. [Beta website](http://cryptomemes.lol/)
-[Ethereum contract](https://etherscan.io/address/0x0d623823d2aa4540f335bb926447dc582dc5bd64)
+Buy Memes on the Blockchain. 
+- [Beta website](http://cryptomemes.lol/)
+- [Ethereum contract](https://etherscan.io/address/0x0d623823d2aa4540f335bb926447dc582dc5bd64)
 
 ## How it works
 - Contract is deployed at ethereum and tokens for memes are created on blockchain.
