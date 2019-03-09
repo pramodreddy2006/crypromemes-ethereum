@@ -1,0 +1,107 @@
+
+<html lang="en">
+      <% include ./partials/head %>
+
+
+  <body>
+    
+    <% include ./partials/header %>
+
+ 
+
+<section id="statistics" class="user_jumbotron ">
+    <div class="cover text-center container">
+      <% displayUsername = user[0].username;if(user[0].username==user[0].wallet_address){displayUsername="Anonymous";} %>
+      <h2 class="heading"><%= displayUsername %></h2>
+                <p class="lead">Address: <%=user[0].wallet_address %></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div>
+              <i class="pe-7s-smile"></i>
+              <span class="timer" data-from="50" data-to="500" data-speed="2300" data-refresh-interval="50"><%=user[0].memes_owned %></span>
+              <h4>Memes Owned</h4>
+              
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div>
+              <i class="pe-7s-server"></i>
+              <span class="timer" data-from="0" data-to="782" data-speed="3000" data-refresh-interval="50"><%=user[0].transaction_count %></span>
+              <h4>Total Transactions</h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div>
+              <i class="pe-7s-piggy"></i>
+              <span class="timer" data-from="152" data-to="25532" data-speed="4000" data-refresh-interval="50"><%=(user[0].worth + 0.00000049).toFixed(6) %> Ξ</span>
+              <h4>Net Worth</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+      <div class="container">
+  <% if (user[0].memes_owned==0) { %>
+      <h2 class="text-center"> Darn! This User doesn't own any memes currently</h2>
+      <hr/>
+      <h2>Memes You May be Interested In:</h2>
+      <hr/>
+<% } %></div>
+
+      <div class="album py-5 bg-light">
+
+
+<div class="container mb-5">
+      <div id="memeRow" class="row ">
+        <!-- PETS LOAD HERE -->
+      </div>
+      
+
+    <div id="memeTemplate" style="display: none;">
+      
+    <div id="meme-item" class="col-3 rounded-circle"  >
+      <div class="movie-card"><a href="" style="text-decoration: none;" class="meme-link"><div class="movie-content-header text-center">
+
+            <h3 class="card-title movie-title">Creative</h3>
+
+          </div>
+        <div class=" movie-header"><img src="temp" class="meme-img"/></div></a>
+                <div class="movie-content">
+      
+                  <div class="movie-info">
+
+                    <div class="info-section">
+                                    <label>OWNER</label>  <span class="owner">ME</span></p>
+                                  </div>
+
+                    <div class="info-section">
+                                    <label>Price</label>  <span class="price">ME</span></p>
+                                  </div>
+                  </div>
+                  
+                      
+                                                      <div class="buy-button">
+
+                        <button class="btn  btn-primary btn-block btn-buy" type="button" data-id="0">Own the Meme</a></button><div>
+
+                  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+<!-- Modal -->
+<% include ./partials/modal %>
+
+  
+</div>
+     <% include ./partials/footer %>
+     <script src="/js/user.js"></script>
+  </body>
+</html>

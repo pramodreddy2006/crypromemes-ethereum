@@ -1,0 +1,92 @@
+
+<html lang="en">
+      <% include ./partials/head %>
+
+  <body>
+    
+    <% include ./partials/header %>
+
+ 
+
+
+      <section id="statistics" class="user_jumbotron ">
+    <div class="cover text-center container">
+      <h2 class="heading">Memes Memes Everywhere</h2>
+                <p class="lead">Memes are precious. They are special. Y U NO Own them? </p>
+      
+    </div>
+  </section>
+
+      <div class="album py-5 bg-light">
+
+
+<div class="container mb-5">
+  <div class="row">
+  <div class="dropdown col">
+  <button class="btn btn-outline-primary float-right dropdown-toggle sort-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Memes</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item sort-dropdown" href="#">All Memes</a>
+    <a class="dropdown-item sort-dropdown" href="#">Highest Priced</a>
+    <a class="dropdown-item sort-dropdown" href="#">Lowest Priced</a>
+    <a class="dropdown-item sort-dropdown" href="#">Popular</a>
+    <a class="dropdown-item sort-dropdown" href="#">Newest</a>
+  </div>
+</div>
+</div>
+      <div class="loader"><div class="spinner"></div></div>
+      <div id="memeRow" class="row">
+        <!-- MEMES LOAD HERE -->
+        
+      </div>
+      
+
+    <div id="memeTemplate" style="display: none;">
+      
+    <div id="meme-item" class="col-3 rounded-circle"  >
+      <div class="movie-card"><a href="" style="text-decoration: none;" class="meme-link"><div class="movie-content-header text-center">
+
+            <h3 class="card-title movie-title">Creative</h3>
+
+          </div>
+        <div class=" movie-header"><img src="temp" class="meme-img"/></div></a>
+                <div class="movie-content">
+      
+                  <div class="movie-info">
+
+                    <div class="info-section">
+                                    <label>OWNER</label>  <span class="owner">ME</span></p>
+                                  </div>
+
+                    <div class="info-section">
+                                    <label>Price</label>  <span class="price">ME</span></p>
+                                  </div>
+                  </div>
+                  
+                      
+                                                      <div class="buy-button">
+
+                        <button class="btn  btn-primary btn-block btn-buy" type="button" data-id="0">Own the Meme</a></button><div>
+
+                  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+<br/>
+<ul class="pagination float-right" id="pagination">
+</ul>
+
+<% include ./partials/modal %>
+
+
+  
+</div>
+     <% include ./partials/footer %>
+     <script src="/js/index.js?"></script>
+  </body>
+</html>

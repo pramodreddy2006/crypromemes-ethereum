@@ -1,0 +1,84 @@
+
+<html lang="en">
+      <% include ./partials/head %>
+
+  <body>
+    
+    <% include ./partials/header %>
+    <main role="main">
+
+      
+      <section id="statistics" class="user_jumbotron ">
+    <div class="cover text-center container">
+      <h2 class="heading">Rich List</h2>
+                <p class="lead">Hall of Fame. The Movers. The Shakers. The Rebels. They push the meme race forward.</p>
+                <!--p class="lead">Here's to the crazy ones. The Movers. The Shakers. The Rebels.<br/>
+The round pegs in the square holes.
+</p-->
+      
+    </div>
+  </section>
+
+</main>
+<div style="padding:30px;"> 
+  <div class="row">
+<div class="table-responsive col-6">
+  <h2 class="text-center">Top 100 Networth</h2>
+  <table class="table table-striped table-bordered table-hover" data-bs-hover-animate="pulse">
+    <thead>
+      <tr class="row">
+        <th class="col-1">Rank</th>
+        <th class="col-7">Name/Address</th>
+        <th class="col-2">Owned Memes</th>
+        <th class="col-2">Net Worth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% rankingsJson =  JSON.parse(networth) %>
+      <% for (var i = 0; i < rankingsJson.length; i++) { %>
+      <tr class="row">
+        <td class="col-1"><%= i+1 %>.</td>
+        <% displayUsername = rankingsJson[i].username; if(rankingsJson[i].username == rankingsJson[i].wallet_address){displayUsername = displayUsername.substring(0,8);
+        }%>
+        <td class="col-7"><a href="/user/<%= rankingsJson[i].wallet_address %>"> <%=displayUsername %></a></td>
+        <td class="col-2"><%= rankingsJson[i].memecount %></td>
+        <td class="col-2"><%= (rankingsJson[i].worth + 0.00000049).toFixed(6) %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<div class="col-1"></div>
+<div class="table-responsive col-5">
+  <h2 class="text-center">Top 100 Active</h2>
+
+  <table class="table table-striped table-bordered table-hover" data-bs-hover-animate="pulse">
+    <thead>
+      <tr class="row">
+        <th class="col-2">Rank</th>
+        <th class="col-7">Name/Address</th>
+        <th class="col-3">Transactions</th>
+        <!--th class="col-2">Net Worth</th-->
+      </tr>
+    </thead>
+    <tbody>
+      <% rankingsJson =  JSON.parse(active) %>
+      <% for (var i = 0; i < rankingsJson.length; i++) { %>
+      <tr class="row">
+        <td class="col-2"><%= i+1 %>.</td>
+        <% displayUsername = rankingsJson[i].username; if(rankingsJson[i].username == rankingsJson[i].wallet_address){displayUsername = displayUsername.substring(0,8);
+        }%>
+        <td class="col-7"><a href="/user/<%= rankingsJson[i].wallet_address %>"> <%=displayUsername %></a></td>
+        <td class="col-3"><%= rankingsJson[i].transaction_count %></td>
+        <!--td class="col-2"><%= rankingsJson[i].worth %></td-->
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+     <% include ./partials/footer %>
+     <script src="/js/connection.js"></script>
+  </body>
+</html>
